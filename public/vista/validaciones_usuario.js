@@ -16,7 +16,7 @@ for(var i = 0; i < document.forms[0].elements.length; i++){
     if(elemento.id == 'cedula'){ 
     document.getElementById('mensajeCedula').innerHTML = '<br>La cedula esta vacia' 
     } 
-    elemento.style.border = '1px red solid' 
+    elemento.style.border = '1px yellow solid' 
     elemento.className = 'error' 
     bandera = false 
     } 
@@ -148,12 +148,12 @@ function validarNombres(elemento) {
                     document.getElementById("mensajeNombres").innerHTML ="";
                     return true
                 } else {
-                    elemento.style.border = '1px red solid'
+                    elemento.style.border = '1px yellow solid'
                     elemento.className = 'error'
                 }
             } else {
                 document.getElementById("mensajeNombres").innerHTML ="<br>Nombre Invalido";
-                elemento.style.border = '1px red solid'
+                elemento.style.border = '1px yellow solid'
                 elemento.className = 'error'
                 return false
             }
@@ -183,12 +183,12 @@ function validarApellidos(elemento) {
                 document.getElementById("mensajeApellidos").innerHTML ="";
                     return true
                 } else {
-                    elemento.style.border = '1px red solid'
+                    elemento.style.border = '1px yellow solid'
                     elemento.className = 'error'
                 }
             } else {
                 document.getElementById("mensajeApellidos").innerHTML ="<br>Apellido invalido";
-                elemento.style.border = '1px red solid'
+                elemento.style.border = '1px yellow solid'
                 elemento.className = 'error'
                 return false
             }
@@ -226,11 +226,11 @@ function validarContrasena(elemento) {
             elemento.className = 'correcto'
             return true;
         } else {
-            elemento.style.border = '1px red solid'
+            elemento.style.border = '1px yellow solid'
             elemento.className = 'error'
         }
     }
-    elemento.style.border = '1px red solid'
+    elemento.style.border = '1px yellow solid'
     elemento.className = 'error'
     document.getElementById("mensajeContrasena").innerHTML ="<br>Contraseña invalida";
     return false;
@@ -244,7 +244,7 @@ function validarCorreo(elemento) {
         var correo = elemento.value
         if (!expression.test(correo)) {
             if (!expression1.test(correo)) {
-                elemento.style.border = '1px red solid'
+                elemento.style.border = '1px yellow solid'
                 elemento.className = 'error'
                 document.getElementById("mensajeCorreo").innerHTML ="<br>Correo invalido";
                 return false

@@ -4,17 +4,17 @@ body {
     font-family: 'Ubuntu', sans-serif;
       background-size: 100% 110%;
   }
-  h1, h2, h3, h4, h5, h6, a, label {
+  h1, h2, h3, h4, h5, h6, a {
     margin:0; padding:0;
   }
   .login {
     margin:0 auto;
-    max-width:400px;
+    max-width:500px;
   }
   .login-header {
     color:#fff;
     text-align:center;
-    font-size:150%;
+    font-size:300%;
   }
  
   
@@ -37,9 +37,7 @@ body {
     text-align:center;
   }
   .login input[type="text"],
-  .login input[type="password"], 
-  .login input[type="email"],
-  .login input[type="date"] {
+  .login input[type="password"] {
     max-width:400px;
       width: 80%;
     line-height:3em;
@@ -50,8 +48,7 @@ body {
     outline:none;
     padding-left:10px;
   }
-  .login-form input[type="submit"],
-  .login-form input[type="reset"] {
+  .login-form input[type="submit"] {
     height:30px;
     width:110px;
     background:rgb(187, 228, 231);
@@ -82,7 +79,7 @@ body {
   
   /*Media Querie*/
   @media only screen and (min-width : 150px) and (max-width : 530px){
-    .login-form label {
+    .login-form h3 {
       text-align:center;
       margin:0;
     }
