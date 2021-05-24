@@ -1,18 +1,21 @@
-<!DOCTYPE html> 
+
 <html> 
 <head> 
 
 <meta charset="UTF-8"> 
 <title>Gestión de usuarios</title> 
-<link href="../../controladores/estiloIndex.css" rel="stylesheet" />
+<link href="../../controladores/estilosIndex.css" rel="stylesheet" />
 </head> 
 <body>
 <div class="login">
-  <div class="login-header">
+<div class="login-header">
     <h1>Iniciar Sesión</h1>
   </div> 
+  
+ 
   <div class="login-form">
 <table style="width:100%"> 
+
 <tr> 
 <th>Codigo</th> 
 <th>Cedula</th> 
@@ -22,7 +25,7 @@
 <th>Correo</th> 
 <th>Fecha Nacimiento</th> 
 </tr>
- 
+
 <?php 
 include '../../../config/conexionBD.php'; 
 $sql = "SELECT * FROM usuario"; 
@@ -51,6 +54,8 @@ echo "</tr>";
 } 
 $conn->close(); 
 ?> 
+
+
 </table> 
 </div>
 </div>
