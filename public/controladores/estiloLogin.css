@@ -48,10 +48,10 @@ body {
     outline:none;
     padding-left:10px;
   }
-  .login-form input[type="button"] {
+  .login-form input[type="submit"] {
     height:30px;
-    width:100px;
-    background:#fff;
+    width:110px;
+    background:rgb(187, 228, 231);
     border:1px solid #f2f2f2;
     border-radius:20px;
     color: slategrey;
