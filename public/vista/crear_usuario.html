@@ -1,0 +1,56 @@
+<html> 
+<head> 
+<meta charset="UTF-8"> 
+<script type="text/javascript" src="validaciones_usuario.js"></script>
+<link href="../controladores/estiloCrear.css" rel="stylesheet" /> 
+<style type="text/css"> 
+.error { 
+        color: red; 
+        font-size: 8px; 
+} 
+</style> 
+</head> 
+<div class="login">
+    <div class="login-header">
+
+        <body> 
+        <form id="formulario01" method="POST" action="../controladores/crear_usuario.php" onsubmit="return validarCamposObligatorios()"> 
+        <label for="cedula">Cedula (*)</label> 
+        <input type="text" id="cedula" name="cedula" value="" placeholder="Ingrese el número de cedula ..." oninput="return validarCedula(this)"  onkeyup="return numeroCedula(this)" maxlength="10" /> 
+        <span id="mensajeCedula" class="error"></span> 
+        <br>
+        <label for="nombres">Nombres (*)</label> 
+        <input type="text" id="nombres" name="nombres" value="" placeholder="Ingrese sus dos nombres ..." onkeyup="return validarNombres(this)" onkeyup="return validarLetras(this)" onkeyup="return validarNombre(this)"  /> 
+        <span id="mensajeNombres" class="error"></span> 
+    <br> 
+        <label for="apellidos">Apelidos (*)</label> 
+        <input type="text" id="apellidos" name="apellidos" value="" placeholder="Ingrese sus dos apellidos ..." onkeyup="return validarApellidos(this)" /> 
+        <span id="mensajeApellidos" class="error"></span> 
+        <br> 
+        <label for="direccion">Dirección (*)</label> 
+        <input type="text" id="direccion" name="direccion" value="" placeholder="Ingrese su dirección ..." /> 
+        <br> 
+        <label for="telefono">Teléfono (*)</label> 
+        <input type="text" id="telefono" name="telefono" value="" placeholder="Ingrese su número telefónico ..." onkeyup="return numeroTelf(this)" maxlength="10" />
+    <span id="mensajeTelefono" class="error"></span> 
+    <br> 
+    <label for="fecha">Fecha Nacimiento (*)</label> 
+    <input type="date" id="fechaNacimiento" name="fechaNacimiento" value="" placeholder="Ingrese su fecha de nacimiento ..."  /> 
+    <span id="mensajeFecha" class="error"></span>       
+    <br> 
+        <label for="correo">Correo electrónico (*)</label> 
+        <input type="email" id="correo" name="correo" value="" placeholder="Ingrese su correo electrónico ..." onkeyup="return validarCorreo(this)" /> 
+        <span id="mensajeCorreo" class="error"></span> 
+        <br> 
+
+        <label for="correo">Contraseña (*)</label> 
+        <input type="password" id="contrasena" name="contrasena" value="" placeholder="Ingrese su contraseña ..." onkeyup="return validarContrasena(this)" /> 
+        <span id="mensajeContrasena" class="error"></span> 
+        <br> 
+        <input type="submit" id="crear" name="crear" value="Aceptar" /> 
+        <input type="reset" id="cancelar" name="cancelar" value="Cancelar" /> 
+        </form> 
+    </div>  
+</div>
+    </body>
+</html>
