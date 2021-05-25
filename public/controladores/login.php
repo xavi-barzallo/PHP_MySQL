@@ -12,10 +12,11 @@
     $rol=$row1['usu_rol'];
     }
     if($rol == "user"){ 
-        header("Location: ../../admin/vista/usuario/index.php");
+        header("Location: ../../admin/vista/usuario/index.php?correo=$usuario");
         
     }else{
-        header("Location: ../..//admin/vista/admin/index.php");
+        header("Location: ../..//admin/vista/admin/index.php?correo=$usuario");
+        
     }}else {
         header("Location: ../vista/login.html");
       
