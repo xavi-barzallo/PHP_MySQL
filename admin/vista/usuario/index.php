@@ -1,5 +1,17 @@
 <html> 
   <head> 
+    <?php
+      session_start();
+      if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
+      header("Location: /Practica/public/vista/login.html");
+      }
+    ?>
+    <?php
+      session_start();
+      if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
+      header("Location: /Practica/public/vista/login.html");
+      }
+    ?>
     <meta charset="UTF-8"> 
     <title>Gestión de usuarios</title> 
     <link href="../../controladores/estilosIndex.css" rel="stylesheet" />
@@ -34,9 +46,6 @@
             echo " <td>" . $row['usu_direccion'] . "</td>";
             echo " <td>" . $row['usu_correo'] . "</td>"; 
             echo " <td>" . $row['usu_fecha_nacimiento'] . "</td>"; 
-            echo " <td> <a href='eliminar.php?codigo=" . $row['usu_codigo'] . "'>Eliminar</a> </td>"; 
-            echo " <td> <a href='modificar.php?codigo=" . $row['usu_codigo'] . "'>Modificar</a> </td>"; 
-            echo " <td> <a href='cambiar_contrasena.php?codigo=" . $row['usu_codigo'] . "'>Cambiar contraseña</a> </td>";
             echo "</tr>"; 
             } 
             } else { 
