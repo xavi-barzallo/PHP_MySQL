@@ -17,18 +17,15 @@
                 <a href="login.html">Iniciar Sesion</a>
                 <a href="crear_usuario.html">Registrarse</a>
                 <h3 for="telefono">Telefonos:</h3>
-                <input type="text" id="telefono" name="telefono" value="" placeholder="Ingrese el telefono ..." />
+                <input type="text" id="telefono" name="telefono" value="" placeholder="Ingrese el correo o cedula ..." />
                 <input type="submit" id="login" name="login" value="Buscar" />
                 <br>
                 <table style="width:100%">
                     <tr>
-                        <th>Codigo</th>
                         <th>Cedula</th>
-                        <th>Nombres</th>
-                        <th>Apellidos</th>
-                        <th>Dirección</th>
                         <th>Correo</th>
-                        <th>Fecha Nacimiento</th>
+                        <th>Numero</th>
+                        <th>Operadora</th>
                     </tr>
                 </table>
         </div>
