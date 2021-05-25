@@ -6,12 +6,6 @@
       header("Location: /Practica/public/vista/login.html");
       }
     ?>
-    <?php
-      session_start();
-      if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
-      header("Location: /Practica/public/vista/login.html");
-      }
-    ?>
     <meta charset="UTF-8"> 
     <title>Gestión de usuarios</title> 
     <link href="../../controladores/estilosIndex.css" rel="stylesheet" />

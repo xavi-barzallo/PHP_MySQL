@@ -7,75 +7,71 @@ var fecha = false;
 var email = false;
 var clave = false;
 
-function validarCamposObligatorios() 
-{ 
-var bandera = true 
-for(var i = 0; i < document.forms[0].elements.length; i++){ 
-    var elemento = document.forms[0].elements[i] 
-    if(elemento.value == '' && elemento.type == 'text'){ 
-    if(elemento.id == 'cedula'){ 
-    document.getElementById('mensajeCedula').innerHTML = '<br>La cedula esta vacia' 
-    } 
-    elemento.style.border = '1px yellow solid' 
-    elemento.className = 'error' 
-    bandera = false 
-    } 
-} 
+function validarCamposObligatorios() {
+    var bandera = true
+    for (var i = 0; i < document.forms[0].elements.length; i++) {
+        var elemento = document.forms[0].elements[i]
+        if (elemento.value == '' && elemento.type == 'text') {
+            if (elemento.id == 'cedula') {
+                document.getElementById('mensajeCedula').innerHTML = '<br>La cedula esta vacia'
+            }
+            elemento.style.border = '1px yellow solid'
+            elemento.className = 'error'
+            bandera = false
+        }
+    }
 
 
- 
-if(!bandera){ 
-alert('Error: revisar los comentarios') 
-} 
-return bandera 
-} 
 
-function validarLetras(elemento) 
-{ 
-if(elemento.value.length > 0){ 
-    var miAscii = elemento.value.charCodeAt(elemento.value.length-1) 
-    console.log(miAscii) 
-    if((miAscii >= 97 && miAscii <= 122) ||  miAscii == 32){ 
-    return true 
-    }else { 
-    elemento.value = elemento.value.substring(0, elemento.value.length-1)
-    return false 
-    } 
-}else{ 
-return true 
-} 
+    if (!bandera) {
+        alert('Error: revisar los comentarios')
+    }
+    return bandera
 }
 
-function numeroCedula(elemento) 
-{ 
-if(elemento.value.length > 0){ 
-    var miAscii = elemento.value.charCodeAt(elemento.value.length-1) 
-    console.log(miAscii) 
-    if(miAscii >= 48 && miAscii <= 57){ 
-    return true 
-    }else { 
-    elemento.value = elemento.value.substring(0, elemento.value.length-1)
-    return false 
-    } 
-}else{ 
-return true 
-} 
+function validarLetras(elemento) {
+    if (elemento.value.length > 0) {
+        var miAscii = elemento.value.charCodeAt(elemento.value.length - 1)
+        console.log(miAscii)
+        if ((miAscii >= 97 && miAscii <= 122) || miAscii == 32) {
+            return true
+        } else {
+            elemento.value = elemento.value.substring(0, elemento.value.length - 1)
+            return false
+        }
+    } else {
+        return true
+    }
 }
 
-function letraNombre(elemento) 
-{ 
-if(elemento.value.length > 0){ 
-    var miAscii = elemento.value.charCodeAt(elemento.value.length-1) 
-    console.log(miAscii) 
-    if((miAscii >= 97 && miAscii <= 122) || (miAscii >= 65 && miAscii <= 90)){ 
-    return true 
-    }else { 
-    elemento.value = elemento.value.substring(0, elemento.value.length-1)
-    return false 
-    } 
-}else{ 
-return true 
-} 
+function numeroCedula(elemento) {
+    if (elemento.value.length > 0) {
+        var miAscii = elemento.value.charCodeAt(elemento.value.length - 1)
+        console.log(miAscii)
+        if (miAscii >= 48 && miAscii <= 57) {
+            return true
+        } else {
+            elemento.value = elemento.value.substring(0, elemento.value.length - 1)
+            return false
+        }
+    } else {
+        return true
+    }
+}
+
+function letraNombre(elemento) {
+    if (elemento.value.length > 0) {
+        var miAscii = elemento.value.charCodeAt(elemento.value.length - 1)
+        console.log(miAscii)
+        if ((miAscii >= 97 && miAscii <= 122) || (miAscii >= 65 && miAscii <= 90)) {
+            return true
+        } else {
+            elemento.value = elemento.value.substring(0, elemento.value.length - 1)
+            return false
+        }
+    } else {
+        return true
+    }
 }
 
 
@@ -103,36 +99,35 @@ function validarCedula() {
             if (suma == 0) {
                 ide = true;
                 document.getElementById("mensajeCedula").innerHTML = "";
-                
+
                 return true;
             } else {
                 ide = false;
-                document.getElementById("mensajeCedula").innerHTML ="<br>Numero de cedula invalida";
+                document.getElementById("mensajeCedula").innerHTML = "<br>Numero de cedula invalida";
             }
         }
     } else {
         ide = false;
-        
+
         document.getElementById("mensajeCedula").innerHTML =
             "<br>Numero de cedula invalida";
     }
     return false;
 }
 
-function numeroTelf(elemento) 
-{ 
-if(elemento.value.length > 0){ 
-    var miAscii = elemento.value.charCodeAt(elemento.value.length-1) 
-    console.log(miAscii) 
-    if(miAscii >= 48 && miAscii <= 57){ 
-    return true 
-    }else { 
-    elemento.value = elemento.value.substring(0, elemento.value.length-1)
-    return false 
-    } 
-}else{ 
-return true 
-} 
+function numeroTelf(elemento) {
+    if (elemento.value.length > 0) {
+        var miAscii = elemento.value.charCodeAt(elemento.value.length - 1)
+        console.log(miAscii)
+        if (miAscii >= 48 && miAscii <= 57) {
+            return true
+        } else {
+            elemento.value = elemento.value.substring(0, elemento.value.length - 1)
+            return false
+        }
+    } else {
+        return true
+    }
 }
 
 function validarNombres(elemento) {
@@ -145,21 +140,21 @@ function validarNombres(elemento) {
                 if ((x.length - 1) > (x.indexOf(" "))) {
                     elemento.style.border = '1px black solid'
                     elemento.className = 'correcto'
-                    document.getElementById("mensajeNombres").innerHTML ="";
+                    document.getElementById("mensajeNombres").innerHTML = "";
                     return true
                 } else {
                     elemento.style.border = '1px yellow solid'
                     elemento.className = 'error'
                 }
             } else {
-                document.getElementById("mensajeNombres").innerHTML ="<br>Nombre Invalido";
+                document.getElementById("mensajeNombres").innerHTML = "<br>Nombre Invalido";
                 elemento.style.border = '1px yellow solid'
                 elemento.className = 'error'
                 return false
             }
 
         } else {
-            document.getElementById("mensajeNombres").innerHTML ="<br>Nombre Invalido";
+            document.getElementById("mensajeNombres").innerHTML = "<br>Nombre Invalido";
             elemento.value = elemento.value.substring(0, elemento.value.length - 1)
             return false
         }
@@ -180,21 +175,21 @@ function validarApellidos(elemento) {
                 if ((x.length - 1) > (x.indexOf(" "))) {
                     elemento.style.border = '1px black solid'
                     elemento.className = 'correcto'
-                document.getElementById("mensajeApellidos").innerHTML ="";
+                    document.getElementById("mensajeApellidos").innerHTML = "";
                     return true
                 } else {
                     elemento.style.border = '1px yellow solid'
                     elemento.className = 'error'
                 }
             } else {
-                document.getElementById("mensajeApellidos").innerHTML ="<br>Apellido invalido";
+                document.getElementById("mensajeApellidos").innerHTML = "<br>Apellido invalido";
                 elemento.style.border = '1px yellow solid'
                 elemento.className = 'error'
                 return false
             }
 
         } else {
-            document.getElementById("mensajeApellidos").innerHTML ="<br>Apellido invalido";
+            document.getElementById("mensajeApellidos").innerHTML = "<br>Apellido invalido";
             elemento.value = elemento.value.substring(0, elemento.value.length - 1)
             return false
         }
@@ -224,6 +219,7 @@ function validarContrasena(elemento) {
         }
         if (mayuscula == true && minuscula == true && caracter_raro == true && numero == true) {
             elemento.className = 'correcto'
+            document.getElementById("mensajeContrasena").innerHTML = "";
             return true;
         } else {
             elemento.style.border = '1px yellow solid'
@@ -232,7 +228,7 @@ function validarContrasena(elemento) {
     }
     elemento.style.border = '1px yellow solid'
     elemento.className = 'error'
-    document.getElementById("mensajeContrasena").innerHTML ="<br>Contraseña invalida";
+    document.getElementById("mensajeContrasena").innerHTML = "<br>Contraseña invalida";
     return false;
 }
 
@@ -246,11 +242,12 @@ function validarCorreo(elemento) {
             if (!expression1.test(correo)) {
                 elemento.style.border = '1px yellow solid'
                 elemento.className = 'error'
-                document.getElementById("mensajeCorreo").innerHTML ="<br>Correo invalido";
+                document.getElementById("mensajeCorreo").innerHTML = "<br>Correo invalido";
                 return false
             } else {
                 elemento.style.border = '1px black solid'
                 elemento.className = 'correcto'
+                document.getElementById("mensajeCorreo").innerHTML = "";
                 return true
             }
         } else {
@@ -285,7 +282,7 @@ function validarFecha() {
                 alert("error año");
                 if (year > new Date().getFullYear())
                     document.getElementById("mensajeFecha").innerHTML =
-                        "<br>El año no debe ser mayor al actual";
+                    "<br>El año no debe ser mayor al actual";
                 return false;
             }
             if (dia.length == 2 && mes.length == 2 && year.length == 4) {
@@ -356,7 +353,6 @@ function validarFecha() {
         return false;
     }
     fecha = true;
-    
+
     return true;
 }
-
