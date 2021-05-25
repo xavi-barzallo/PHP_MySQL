@@ -28,19 +28,25 @@
         </tr>
         <?php 
           include '../../../config/conexionBD.php'; 
-          $sql = "SELECT * FROM usuario"; 
+          $codigo =  $_GET["correo"];
+          $sql = "SELECT * FROM usuario where usu_correo = '$codigo'"; 
           $result = $conn->query($sql); 
           if ($result->num_rows > 0) { 
           while($row = $result->fetch_assoc()) { 
-            echo "<tr>";
-            echo " <td>" . $row["usu_codigo"] . "</td>";  
-            echo " <td>" . $row["usu_cedula"] . "</td>"; 
-            echo " <td>" . $row['usu_nombres'] ."</td>"; 
-            echo " <td>" . $row['usu_apellidos'] . "</td>"; 
-            echo " <td>" . $row['usu_direccion'] . "</td>";
-            echo " <td>" . $row['usu_correo'] . "</td>"; 
-            echo " <td>" . $row['usu_fecha_nacimiento'] . "</td>"; 
-            echo "</tr>"; 
+            $verificar = $row['usu_eliminado'];
+            if($verificar == 'N'){
+                echo "<tr>";
+                echo " <td>" . $row["usu_codigo"] . "</td>";  
+                echo " <td>" . $row["usu_cedula"] . "</td>"; 
+                echo " <td>" . $row['usu_nombres'] ."</td>"; 
+                echo " <td>" . $row['usu_apellidos'] . "</td>"; 
+                echo " <td>" . $row['usu_direccion'] . "</td>";
+                echo " <td>" . $row['usu_correo'] . "</td>"; 
+                echo " <td>" . $row['usu_fecha_nacimiento'] . "</td>"; 
+                echo " <td> <a href='modificar.php?codigo=" . $row['usu_codigo'] . "'>Modificar</a> </td>"; 
+                echo " <td> <a href='cambiar_contrasena.php?cedula=" . $row['usu_cedula'] . "'>Cambiar contraseña</a> </td>";
+                echo "</tr>"; 
+              }
             } 
             } else { 
             echo "<tr>"; 

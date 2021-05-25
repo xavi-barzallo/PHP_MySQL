@@ -18,22 +18,41 @@
  $fechaNacimiento = isset($_POST["fechaNacimiento"]) ? trim($_POST["fechaNacimiento"]): null;
  date_default_timezone_set("America/Guayaquil");
  $fecha = date('Y-m-d H:i:s', time());
- $sql = "UPDATE usuario " .
- "SET usu_cedula = '$cedula', " .
- "usu_nombres = '$nombres', " .
- "usu_apellidos = '$apellidos', " .
- "usu_direccion = '$direccion', " .
- "usu_correo = '$correo', " .
- "usu_fecha_nacimiento = '$fechaNacimiento', " .
- "usu_rol = '$rol', " .
- "usu_fecha_modificacion = '$fecha' " .
- "WHERE usu_codigo = $codigo";
- if ($conn->query($sql) === TRUE) {
- echo "Se ha actualizado los datos personales correctamemte!!!<br>";
- } else {
- echo "Error: " . $sql . "<br>" . mysqli_error($conn) . "<br>";
+ if($rol==null){
+    $sql = "UPDATE usuario " .
+    "SET usu_cedula = '$cedula', " .
+    "usu_nombres = '$nombres', " .
+    "usu_apellidos = '$apellidos', " .
+    "usu_direccion = '$direccion', " .
+    "usu_correo = '$correo', " .
+    "usu_fecha_nacimiento = '$fechaNacimiento', " .
+    "usu_fecha_modificacion = '$fecha' " .
+    "WHERE usu_codigo = $codigo";
+    if ($conn->query($sql) === TRUE) {
+        echo "Se ha actualizado los datos personales correctamemte!!!<br>";
+        } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn) . "<br>";
+        }
+        echo "<a href='../vista/usuario/index.php?correo=$correo'>Regresar</a>";
+ }else{
+    $sql = "UPDATE usuario " .
+    "SET usu_cedula = '$cedula', " .
+    "usu_nombres = '$nombres', " .
+    "usu_apellidos = '$apellidos', " .
+    "usu_direccion = '$direccion', " .
+    "usu_correo = '$correo', " .
+    "usu_fecha_nacimiento = '$fechaNacimiento', " .
+    "usu_rol = '$rol', " .
+    "usu_fecha_modificacion = '$fecha' " .
+    "WHERE usu_codigo = $codigo";
+    if ($conn->query($sql) === TRUE) {
+        echo "Se ha actualizado los datos personales correctamemte!!!<br>";
+        } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn) . "<br>";
+        }
+        echo "<a href='../vista/admin/index.php'>Regresar</a>";
  }
- echo "<a href='../vista/admin/index.php'>Regresar</a>";
+ 
  $conn->close();
 ?>
 </body>
