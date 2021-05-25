@@ -5,6 +5,7 @@
     <title>Pagina principal</title>
     <link href="../controladores/estilosPrincipal.css" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="../../config/buscar.js"></script>
 </head>
 
 <body>
@@ -13,21 +14,14 @@
             <h1>Hola, bienvenido</h1>
         </div>
         <div class="login-form">
-            <form id="" method="POST" action="">
+            <form onsubmit="return buscarTelefonos()">
                 <a href="login.html">Iniciar Sesion</a>
                 <a href="crear_usuario.html">Registrarse</a>
                 <h3 for="telefono">Telefonos:</h3>
-                <input type="text" id="telefono" name="telefono" value="" placeholder="Ingrese el correo o cedula ..." />
-                <input type="submit" id="login" name="login" value="Buscar" />
-                <br>
-                <table style="width:100%">
-                    <tr>
-                        <th>Cedula</th>
-                        <th>Correo</th>
-                        <th>Numero</th>
-                        <th>Operadora</th>
-                    </tr>
-                </table>
+                <input type="text" id="cedula" name="cedula" value="" placeholder="Ingrese el correo o cedula ..." />
+                <input type="submit" id="buscar" name="buscar" value="Buscar" onclick="buscarTelefonos()" />
+                <div id="informacion"></div>
+
         </div>
     </div>
 
