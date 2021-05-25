@@ -4,17 +4,16 @@
  $cedula = $_GET['cedula'];
  //echo "Hola " . $cedula;
 
- $sql = "SELECT * FROM usuario WHERE usu_eliminado = 'N' and usu_cedula='$cedula'";
+ $sql = "SELECT * FROM usuario u,telefono t WHERE u.usu_eliminado = 'N' and u.usu_cedula='$cedula'";
+
 //cambiar la consulta para puede buscar por ocurrencias de letras
  $result = $conn->query($sql);
  echo " <table style='width:100%'>
  <tr>
  <th>Cedula</th>
- <th>Nombres</th>
- <th>Apellidos</th>
- <th>Dirección</th>
  <th>Correo</th>
- <th>Fecha Nacimiento</th>
+ <th>Numero de telefono</th>
+ <th>Operadora</th>
  <th></th>
  <th></th>
  <th></th>
@@ -24,11 +23,9 @@
 
  echo "<tr>";
  echo " <td>" . $row['usu_cedula'] . "</td>";
- echo " <td>" . $row['usu_nombres'] ."</td>";
- echo " <td>" . $row['usu_apellidos'] . "</td>";
- echo " <td>" . $row['usu_direccion'] . "</td>";
- echo " <td>" . $row['usu_correo'] . "</td>";
- echo " <td>" . $row['usu_fecha_nacimiento'] . "</td>";
+ echo " <td><a href='mailto:". $row['usu_correo']. "'>". $row['usu_correo']. "</a></td>";
+ echo " <td><a href='mailto:" . $row['tel_numero'] . "'>" . $row['tel_numero'] . "</a></td>";
+ echo " <td>" . $row['tel_operadora'] . "</td>";
  echo "</tr>";
  }
  } else {
