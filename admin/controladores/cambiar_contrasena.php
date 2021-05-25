@@ -31,7 +31,7 @@ usu_password=MD5('$contrasena1')";
     }else{
     echo "<p>La contraseña actual no coincide con nuestros registros!!! </p>";
     }
-    echo "<a href='../../vista/usuario/index.php'>Regresar</a>";
+    echo "<a href='../vista/admin/index.php'>Regresar</a>";
     $conn->close();
    ?>
    </body>

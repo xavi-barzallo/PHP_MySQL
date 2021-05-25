@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+
 <html>
 <head>
  <meta charset="UTF-8">
+ <link href="../../controladores/estilosContrasena.css" rel="stylesheet" />
  <title>Modificar datos de persona</title>
  <script type="text/javascript">
     function buscarPorCedula() {
@@ -30,7 +31,13 @@
  </script>
 </head>
 <body>
-<?php
+<div class="login">
+        <div class="login-header">
+            <h1>Cambio de Contraseña</h1>
+        </div>
+        <div class="login-form">
+            <form id="" method="POST" action="">
+            <?php
  //incluir conexión a la base de datos
  include "../../../config/conexionBD.php";
  $cedula = $_GET['cedula'];
@@ -74,11 +81,11 @@
 
 ?>
 <?php
- session_start();
- if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
- header("Location: /SistemaDeGestion/public/vista/login.html");
- }
-?>
+      session_start();
+      if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
+      header("Location: /Practica/public/vista/login.html");
+      }
+    ?>
  <form id="formulario01" method="POST" action="../../controladores/usuario/cambiar_contrasena.php">
 
  <input type="hidden" id="codigo" name="codigo" value="<?php echo $codigo ?>" />
@@ -94,5 +101,9 @@ placeholder="Ingrese su contraseña nueva ..."/>
  <input type="submit" id="modificar" name="modificar" value="Modificar" />
  <input type="reset" id="cancelar" name="cancelar" value="Cancelar" />
  </form>
+        </div>
+    </div>
+
+
 </body>
 </html>
