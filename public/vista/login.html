@@ -1,30 +1,32 @@
-
 <html>
+
 <head>
-    <meta charset="UTF-8"> 
-    <title>Iniciar sesión</title> 
-<link href="../controladores/estiloLogin.css" rel="stylesheet" />
-<link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <title>Iniciar sesión</title>
+    <link href="../controladores/estiloLogin.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
-<div class="login">
-  <div class="login-header">
-    <h1>Iniciar Sesión</h1>
-  </div>
-  <div class="login-form">
-    <form id="formulario01" method="POST" action="../controladores/login.php"> 
-    <h3  for="correo">Correo:</h3>
-    <input type="text" id="correo" name="correo" value="" placeholder="Ingrese el correo ..."/> 
-    <h3 for="nombres">Contraseña:</h3>
-    <input type="password" id="contrasena" name="contrasena" value="" placeholder="Ingrese su contraseña ..."/> 
-    <br>
-    <input type="submit" id="login" name="login" value="Iniciar Sesión" /> 
-    <br>
-    <a class="sign-up" href="crear_usuario.html">Registrase</a>
-    <br>
-    
-  </div>
-</div>
+    <div class="login">
+        <div class="login-header">
+            <h1>Iniciar Sesión</h1>
+        </div>
+        <div class="login-form">
+            <form id="formulario01" method="POST" action="../controladores/login.php">
+                <h3 for="correo">Correo:</h3>
+                <input type="text" id="correo" name="correo" value="" placeholder="Ingrese el correo ..." />
+                <h3 for="nombres">Contraseña:</h3>
+                <input type="password" id="contrasena" name="contrasena" value="" placeholder="Ingrese su contraseña ..." />
+                <br>
+                <input type="submit" id="login" name="login" value="Iniciar Sesión" />
+                <br>
+                <a class="sign-up" href="crear_usuario.html">Registrase</a>
+                <br>
+
+        </div>
+    </div>
 
 </body>
+
 </html>
